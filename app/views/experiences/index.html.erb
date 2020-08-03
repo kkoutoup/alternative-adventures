@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Experiences#index</h1>
+  <% @experiences.each do |experience| %>
+    <p>Title: <%= experience.title %></p>
+    <p>Type: <%= experience.experience_type %></p>
+    <p>Description: <%= experience.description %></p>
+    <p>Price: <%= experience.price %></p>
+    <p>User_id: <%= experience.user_id %></p>
+    <hr>
+  <% end %>
+</div>
+
+
+    <%# t.string "title"
+    t.string "experience_type"
+    t.text "description"
+    t.integer "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id" %>
