@@ -1,5 +1,5 @@
 class ExperiencesController < ApplicationController
-  before_action :find_experience, only: [:show, :edit, :destroy]
+  before_action :find_experience, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -28,7 +28,7 @@ class ExperiencesController < ApplicationController
 
   def update
     @experience.update(strong_params)
-    if @experience.update
+    if @experience.save
       redirect_to experience_path(@experience)
     else
       render :edit
