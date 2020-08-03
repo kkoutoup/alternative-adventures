@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @experience do |f| %>
+  <%= f.input :title %>
+  <%= f.input :experience_type %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+</div>
