@@ -6,7 +6,7 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.all
   end
 
-  def showl; end
+  def show; end
 
   def new
     @experience = Experience.new
