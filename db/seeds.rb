@@ -30,7 +30,9 @@ end
   Booking.create!([{
     user_id: Faker::Number.within(range: (User.first.id)..(User.last.id)),
     experience_id: Faker::Number.within(range: (Experience.first.id)..(Experience.last.id)),
-    booked: false
+    booked: false,
+    starts_at: Faker::Date.between(from: Date.today, to: '2021-09-25'),
+    ends_at: Faker::Date.between(from: Date.today, to: '2021-09-25')
   }])
 end
 
