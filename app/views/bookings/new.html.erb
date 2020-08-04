@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Make a booking</h1>
   <%= simple_form_for [@experience, @booking] do |f| %>
-    <%= f.input :starts_at %>
-    <%= f.input :ends_at %>
+    <%= f.input :starts_at, as: :string, input_html: { class: "datepicker" } %>
+    <%= f.input :ends_at, as: :string, input_html: { class: "datepicker" } %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
