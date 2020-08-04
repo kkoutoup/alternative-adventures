@@ -1,14 +1,18 @@
 <div class="container">
   <h1>My bookings#index</h1>
-  <% @bookings.each do |booking| %>
-    <p>Start Date: <%= booking.starts_at %></p>
-    <p>End Date: <%= booking.ends_at %></p>
-    <p>Experience Title: <%= booking.experience.title %></p>
-    <p>Type: <%= booking.experience.experience_type %></p>
-    <p>Description: <%= booking.experience.description %></p>
-    <p>Price: <%= booking.experience.price %></p>
-    <p>Supplier: <%= booking.experience.user.first_name %></p>
-    <p>Buyer: <%= booking.user.first_name %></p>
-    <hr>
+  <% if @bookings.count > 0 %>
+    <% @bookings.each do |booking| %>
+      <p>Start Date: <%= booking.starts_at.strftime('%d-%m-%Y') %></p>
+      <p>End Date: <%= booking.ends_at.strftime('%d-%m-%Y') %></p>
+      <p>Experience Title: <%= booking.experience.title %></p>
+      <p>Type: <%= booking.experience.experience_type %></p>
+      <p>Description: <%= booking.experience.description %></p>
+      <p>Price: <%= booking.experience.price %></p>
+      <p>Supplier: <%= booking.experience.user.first_name %></p>
+      <p>Buyer: <%= booking.user.first_name %></p>
+      <hr>
+    <% end %>
+  <% else %>
+    <p>Sorry, you don't have any bookings at the moment.</p>
   <% end %>
 </div>
