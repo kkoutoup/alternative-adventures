@@ -6,8 +6,7 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @experience = Experience.new
@@ -23,8 +22,7 @@ class ExperiencesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @experience.update(strong_params)
