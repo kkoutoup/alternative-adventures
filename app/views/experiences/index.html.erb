@@ -8,5 +8,7 @@
     <p>User_id: <%= experience.user_id %></p>
     <%= link_to "See Experience", experience_path(experience) %>
     <hr>
+    <%= link_to "See All My Bookings", experience_bookings_path(:experience_id) %>
+    <hr>
   <% end %>
 </div>

@@ -5,7 +5,11 @@
   <p>Description: <%= @experience.description %></p>
   <p>Price: <%= @experience.price %></p>
   <p>User: <%= @experience.user_id %></p>
+  <%= link_to "See My Bookings", experience_bookings_path(@experience) %>
+  <hr>
   <%= link_to "Edit Experience", edit_experience_path(@experience) %>
+  <hr>
   <%= link_to "Delete Experience", experience_path(@experience), method: :delete, data: {confirm:"chuck norris is watching you..are you sure?"} %>
+  <hr>
   <%= link_to "Book Experience", new_experience_booking_path(@experience) %>
 </div>

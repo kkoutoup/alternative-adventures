@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :find_experience
+  before_action :find_experience, except: [:index]
+
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
+  def show; end
 
   def new
     @booking = Booking.new
@@ -11,9 +17,22 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save
       # set booked to true?
-      redirect_to experiences_path
+      @booking.update_attributes(booked: true)
+      redirect_to experience_path(@experience)
+      # @booking.booked = true
     else
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    @booking.update(booking_params)
+    if @booking.save
+      redirect_to experience_path(@experience)
+    else
+      render :edit
     end
   end
 
