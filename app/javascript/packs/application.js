@@ -27,9 +27,7 @@ import "bootstrap";
 
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-flatpickr(".datepicker", {
-  altInput: true
-});
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,5 +35,8 @@ flatpickr(".datepicker", {
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  flatpickr(".datepicker", {
+    altInput: true
+  });
 });
 
