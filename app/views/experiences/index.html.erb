@@ -1,14 +1,26 @@
+<%= render 'components/homepage_banner' %>
 <div class="container">
-  <h1>Experiences#index</h1>
-  <% @experiences.each do |experience| %>
-    <p>Title: <%= experience.title %></p>
-    <p>Type: <%= experience.experience_type %></p>
-    <p>Description: <%= experience.description %></p>
-    <p>Price: <%= experience.price %></p>
-    <p>User_id: <%= experience.user_id %></p>
-    <%= link_to "See Experience", experience_path(experience) %>
-    <hr>
-    <%= link_to "See All My Bookings", experience_bookings_path(:experience_id) %>
-    <hr>
-  <% end %>
+  <h1>Our most popular experiences</h1>
+  <div class="card-columns mt-5">
+    <% @experiences.each do |experience| %>
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="card-title">
+            <h5>Title: <%= experience.title %></h5>
+          </div>
+          <div class="card-text">
+            <p>Type: <%= experience.experience_type %></p>
+            <p>Description: <%= experience.description %></p>
+            <p>Price: <%= experience.price %></p>
+            <p>User_id: <%= experience.user_id %></p>
+            <%= link_to "Experiences I offer", experience_path(experience) %>
+            <hr>
+            <%= link_to "My Bookings", experience_bookings_path(:experience_id) %>
+            <hr>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
