@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h1>Our most popular experiences</h1>
+  <div class="row">
+      <% @experiences.each do |experience| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= link_to experience_path(experience) do %>
+            <div class="cardContainer">
+              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/do0m6vppx/image/upload/v1596600711/Alternative%20Adventure/photo-1513883583436-c8bbfbc3b215_lqmvnd.jpg)">
+              </div>
+                <div class="card">
+                  <div class="card-description">
+                    <p><strong id="city"><%= experience.experience_type %></strong></p>
+                    <p><%= experience.title %></p>
+                  </div>
+                  <div class="card-price">
+                    <h2> <%= experience.price %> £</h2>
+                  </div> <!-- card-price -->
+                </div> <!-- card -->
+            </div> <!-- card container -->
+          <% end %>
+        </div> <!-- col -->
+      <% end %>
+  </div>  <!-- row -->
+</div> <!-- container -->
