@@ -45,7 +45,7 @@ class ExperiencesController < ApplicationController
   private
 
   def strong_params
-    params.require(:experience).permit(:title, :experience_type, :description, :price)
+    params.require(:experience).permit(:title, :experience_type, :description, :price, :photo)
   end
 
   def find_experience
