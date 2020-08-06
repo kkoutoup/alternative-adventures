@@ -5,8 +5,12 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
           <%= link_to experience_path(experience) do %>
             <div class="cardContainer">
-              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/do0m6vppx/image/upload/v1596600711/Alternative%20Adventure/photo-1513883583436-c8bbfbc3b215_lqmvnd.jpg)">
-              </div>
+            <% if experience.photo.attached? %>
+              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 300, width: 400, crop: :fill %>')">
+            <% else %>
+            <div class="card-image">
+              <%  end %>
+            </div>
                 <div class="card">
                   <div class="card-description">
                     <p><strong id="city"><%= experience.experience_type %></strong></p>
