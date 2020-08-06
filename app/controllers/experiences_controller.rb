@@ -3,7 +3,11 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @experiences = Experience.all
+    if params[:p]
+      @experiences = Experience.where(user_id:params[:p].to_i)
+    else
+      @experiences = Experience.all
+    end
   end
 
   def show; end
