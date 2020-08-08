@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initMapbox } from '../packs/maps';
 
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
@@ -35,6 +36,7 @@ import "flatpickr/dist/flatpickr.min.css";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initMapbox();
   flatpickr(".datepicker", {
     altInput: true
   });
