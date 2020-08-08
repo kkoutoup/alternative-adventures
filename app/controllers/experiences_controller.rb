@@ -4,7 +4,11 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.geocoded
-    @experiences = Experience.all
+    if params[:query].present?
+      @experiences = Experience.where(title: params[:query])
+    else
+      @experiences = Experience.all
+    end
   end
 
   def my_experiences
