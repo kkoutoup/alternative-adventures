@@ -4,11 +4,11 @@ class ExperiencesController < ApplicationController
 
   def index
     @experiences = Experience.geocoded
-    if params[:p]
-      @experiences = Experience.where(user_id:params[:p].to_i)
-    else
-      @experiences = Experience.all
-    end
+    @experiences = Experience.all
+  end
+
+  def my_experiences
+    @experiences = Experience.where(user:current_user)
   end
 
   def show
@@ -58,14 +58,14 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
   end
 
-  def find_cordinates
-    @experiences = Experience.geocoded # returns flats with coordinates
+  # def find_cordinates
+  #   @experiences = Experience.geocoded # returns flats with coordinates
 
-    @markers = @experiences.map do |experience|
-      {
-        lat: experience.latitude,
-        lng: experience.longitude
-      }
-    end
-  end
+  #   @markers = @experiences.map do |experience|
+  #     {
+  #       lat: experience.latitude,
+  #       lng: experience.longitude
+  #     }
+  #   end
+  # end
 end
