@@ -1,15 +1,14 @@
 <div class="container">
   <h1>My bookings</h1>
+  <hr>
   <% if @bookings.count > 0 %>
     <% @bookings.each do |booking| %>
-      <p>Start Date: <%= booking.starts_at.strftime('%d-%m-%Y') %></p>
-      <p>End Date: <%= booking.ends_at.strftime('%d-%m-%Y') %></p>
-      <p>Experience Title: <%= booking.experience.title %></p>
-      <p>Type: <%= booking.experience.experience_type %></p>
-      <p>Description: <%= booking.experience.description %></p>
-      <p>Price: <%= booking.experience.price %></p>
-      <p>Supplier: <%= booking.experience.user.first_name %></p>
-      <p>Buyer: <%= booking.user.first_name %></p>
+      <h4><%= booking.experience.title %></h4>
+      <p class="black-text"><i class="far fa-calendar-alt"></i> <%= booking.starts_at.strftime('%d-%m-%Y') %> - <%= booking.ends_at.strftime('%d-%m-%Y') %> </p>
+      <p class="black-text"><i class="fas fa-basketball-ball"></i> <%= booking.experience.experience_type %></p>
+      <p class="black-text"><i class="fas fa-book-reader"></i> <%= booking.experience.description %></p>
+      <p class="black-text"><i class="fas fa-coins"></i> £ <%= booking.experience.price %></p>
+      <p class="black-text"><i class="fas fa-user"></i> <%= booking.experience.user.first_name %></p>
       <hr>
     <% end %>
   <% else %>
