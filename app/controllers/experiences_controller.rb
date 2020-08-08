@@ -3,6 +3,7 @@ class ExperiencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @experiences = Experience.geocoded
     if params[:p]
       @experiences = Experience.where(user_id:params[:p].to_i)
     else
@@ -10,7 +11,12 @@ class ExperiencesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @markers = {
+      lat: @experience.latitude,
+      lng: @experience.longitude
+    }
+  end
 
   def new
     @experience = Experience.new
@@ -45,10 +51,21 @@ class ExperiencesController < ApplicationController
   private
 
   def strong_params
-    params.require(:experience).permit(:title, :experience_type, :description, :price, :photo)
+    params.require(:experience).permit(:title, :experience_type, :description, :price, :photo, :address)
   end
 
   def find_experience
     @experience = Experience.find(params[:id])
+  end
+
+  def find_cordinates
+    @experiences = Experience.geocoded # returns flats with coordinates
+
+    @markers = @experiences.map do |experience|
+      {
+        lat: experience.latitude,
+        lng: experience.longitude
+      }
+    end
   end
 end
