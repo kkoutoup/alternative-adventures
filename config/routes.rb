@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :experiences do
     resources :bookings
   end
+  get 'my_experiences', to:'experiences#my_experiences'
 end
