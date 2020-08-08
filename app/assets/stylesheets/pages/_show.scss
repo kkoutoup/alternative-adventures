@@ -1,0 +1,24 @@
+.alt-adventures-link {
+  color: #5c5c5c;
+  text-decoration: underline;
+  opacity: .9;
+  &:hover{
+    opacity: 1;
+    color: #5c5c5c;
+  }
+}
+.grey-text{
+  color: #5c5c5c;
+}
+
+.larger-text {
+  font-size: 1.2em;
+}
+
+.book {
+  width: 250px;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+}
+

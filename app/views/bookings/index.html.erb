@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>My bookings#index</h1>
+  <h1>My bookings</h1>
   <% if @bookings.count > 0 %>
     <% @bookings.each do |booking| %>
       <p>Start Date: <%= booking.starts_at.strftime('%d-%m-%Y') %></p>

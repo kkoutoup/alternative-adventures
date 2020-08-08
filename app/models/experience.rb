@@ -7,5 +7,5 @@ class Experience < ApplicationRecord
   validates :description, length: { in: 15..500 }
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 5 }
   has_one_attached :photo
-  has_rich_text :description
+  # has_rich_text :description
 end
