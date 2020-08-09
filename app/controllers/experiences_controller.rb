@@ -61,15 +61,4 @@ class ExperiencesController < ApplicationController
   def find_experience
     @experience = Experience.find(params[:id])
   end
-
-  # def find_cordinates
-  #   @experiences = Experience.geocoded # returns flats with coordinates
-
-  #   @markers = @experiences.map do |experience|
-  #     {
-  #       lat: experience.latitude,
-  #       lng: experience.longitude
-  #     }
-  #   end
-  # end
 end
