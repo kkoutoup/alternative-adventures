@@ -3,6 +3,17 @@
     <h1>Alternative Adventures</h1>
     <h3>Escape without the travel</h3>
     <p>Holiday adventures on your doorstep</p>
-    <a class="btn btn-primary" href="#">Trending experiences</a>
+    <%= form_tag experiences_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Try 'London' or 'Yoga'" %>
+      <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+    <% end %>
   </div>
 </div>
+
+
+
+<!-- Previous code for Trending Experiences button: -->
+<!-- <a class="btn btn-primary" href="#">Trending experiences</a> -->
