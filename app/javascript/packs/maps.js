@@ -1,9 +1,9 @@
 import mapboxgl from 'mapbox-gl';
 
-const mapElement = document.getElementById('map');
 
 const initMapbox = () => {
-
+  const mapElement = document.getElementById('map');
+  
   if (mapElement) {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
@@ -15,7 +15,7 @@ const initMapbox = () => {
       new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);
-    })
+    });
     if (markers.length === 0) {
       map.setZoom(1);
     } else if (markers.length === 1) {
@@ -26,7 +26,7 @@ const initMapbox = () => {
       markers.forEach((marker) => {
         bounds.extend([marker.lng, marker.lat]);
       });
-      map.fitBounds(bounds, { duration:200, padding: 50 })
+      map.fitBounds(bounds, { duration:200, padding:70 })
     }
   }
 }
