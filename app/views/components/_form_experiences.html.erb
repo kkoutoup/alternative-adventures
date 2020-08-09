@@ -2,8 +2,6 @@
   <%= simple_form_for @experience do |f| %>
     <%= f.input :title %>
     <%= f.input :experience_type, collection: %w(Food/Cooking IT Drinking Sport/Outdoors Gardening Arts/Design Photography Music Parents&Kids Other) %>
-    <%# <%= f.label :description %>
-    <%# <%= f.rich_text_area :description %>
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :price %>
