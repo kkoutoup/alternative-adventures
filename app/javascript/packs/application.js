@@ -24,18 +24,12 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initMapbox } from '../packs/maps';
+import { initMapbox } from './maps';
 
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   initMapbox();
   flatpickr(".datepicker", {
     altInput: true
@@ -43,5 +37,5 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-require("trix")
-require("@rails/actiontext")
+// require("trix")
+// require("@rails/actiontext")
