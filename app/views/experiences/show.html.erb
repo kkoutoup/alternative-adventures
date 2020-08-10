@@ -15,7 +15,7 @@
   <div class="row mt-4">
     <div class="col-12 col-md-5 offset-lg-1">
       <p class="grey-text larger-text"><i class="fas fa-user"></i> Offered by <%= @experience.user.first_name %> <%= @experience.user.last_name %></p>
-      <p class="grey-text larger-text"><%= render 'components/experience_type' %> <%= @experience.experience_type %> adventure</p>
+      <p class="grey-text larger-text"><%= render 'components/experience_type_icon' %> <%= @experience.experience_type %> adventure</p>
       <p class="grey-text larger-text"><i class="fas fa-coins"></i> £ <%= @experience.price %></p>
     </div>
     <div class="col-12 col-md-5">
@@ -30,8 +30,6 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
   </div>
-
-
   <div class="row mt-5">
     <div class="col-12 col-md-10 offset-lg-1">
       <% if current_user && @experience.user_id == current_user.id %>
