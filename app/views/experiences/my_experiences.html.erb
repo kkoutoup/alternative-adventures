@@ -14,7 +14,7 @@
       </div>
       <div class="my-description">
         <h4><%= experience.title %></h4>
-        <p class="black-text"><i class="fas fa-basketball-ball"></i> <%= experience.experience_type %></p>
+        <p class="black-text"> <%= render 'components/my_experiences_experience_type', locals: { current_experience: experience } %> adventure </p>
         <p class="black-text"><i class="fas fa-book-reader"></i> <%= experience.description %></p>
         <p class="black-text"><i class="fas fa-coins"></i> £ <%= experience.price %></p>
         <%= link_to "Edit Experience", edit_experience_path(experience) %>
