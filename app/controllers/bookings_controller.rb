@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :find_experience, except: [:index]
 
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = Booking.where(user_id: current_user.id).order(id: :desc)
   end
 
   def show; end
