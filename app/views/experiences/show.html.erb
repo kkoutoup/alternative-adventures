@@ -2,6 +2,8 @@
   <div class="row">
     <div class="col-12 col-lg-10 offset-lg-1">
       <%= link_to 'All Alternative Adventures', experiences_path, class:"alt-adventures-link" %>
+      <%= @experience.user %>
+      <%= current_user %>
       <%= link_to "Edit Experience", edit_experience_path(@experience), class:"alt-adventures-link" %>
       <h1 class="mt-3"><%= @experience.title %></h1>
       <% if @experience.photo.present? %>
