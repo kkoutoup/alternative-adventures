@@ -6,18 +6,7 @@
       <h4><%= booking.experience.title %></h4>
       <p class="black-text"><i class="far fa-calendar-alt"></i> <%= booking.starts_at.strftime('%d-%m-%Y') %> - <%= booking.ends_at.strftime('%d-%m-%Y') %> </p>
       <p class="black-text"> 
-        <% case booking.experience.experience_type when "Food/Cooking"%>
-          <i class="fas fa-utensils"></i>
-          <% when "IT" %> <i class="fas fa-robot"></i>
-          <% when "Drinking" %> <i class="fas fa-cocktail"></i>
-          <% when "Sport/Outdoors" %> <i class="fas fa-basketball-ball"></i>
-          <% when "Gardening" %> <i class="fas fa-seedling"></i>
-          <% when "Arts/Design" %> <i class="fas fa-palette"></i>
-          <% when "Photography" %> <i class="fas fa-camera-retro"></i>
-          <% when "Music" %> <i class="fas fa-drum"></i>
-          <% when "Parents&Kids" %> <i class="fas fa-child"></i>
-          <% when "Other" %> <i class="fas fa-question"></i>
-        <% end %> <%= booking.experience.experience_type %> 
+        <%= render 'components/booking_experience_type', locals: { current_booking: booking.experience } %>
         adventure
       </p>
       <p class="black-text"><i class="fas fa-book-reader"></i> <%= booking.experience.description %></p>
