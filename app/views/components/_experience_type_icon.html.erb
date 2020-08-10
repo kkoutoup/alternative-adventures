@@ -1,4 +1,14 @@
-<% case @experience.experience_type when "Food/Cooking"%>
+<% local_var = "" %>
+
+<% if params[:controller] == "experiences" && params[:action] == "show" %>
+  <% local_var = @experience %>
+<% elsif params[:controller] == "experiences" && params[:action] == "my_experiences" %>
+  <% local_var = locals[:current_experience] %>
+<% else %>
+  <% local_var = locals[:current_booking] %>
+<% end %>
+
+<% case local_var.experience_type when "Food/Cooking"%>
   <i class="fas fa-utensils"></i>
   <% when "IT" %> <i class="fas fa-robot"></i>
   <% when "Drinking" %> <i class="fas fa-cocktail"></i>

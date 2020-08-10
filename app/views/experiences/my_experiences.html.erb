@@ -15,7 +15,7 @@
       <div class="my-description">
         <h4><%= experience.title %></h4>
         <p class="black-text"> 
-          <%= render 'components/my_experiences_experience_type', locals: { current_experience: experience } %> adventure 
+          <%= render 'components/experience_type_icon', locals: { current_experience: experience } %> <%= experience.experience_type %>  adventure 
         </p>
         <p class="black-text"><i class="fas fa-book-reader"></i> <%= experience.description %></p>
         <p class="black-text"><i class="fas fa-coins"></i> £ <%= experience.price %></p>
