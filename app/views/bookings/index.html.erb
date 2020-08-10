@@ -17,8 +17,7 @@
         <h4><%= booking.experience.title %></h4>
         <p class="black-text"><i class="far fa-calendar-alt"></i> <%= booking.starts_at.strftime('%d-%m-%Y') %> - <%= booking.ends_at.strftime('%d-%m-%Y') %> </p>
         <p class="black-text">
-          <%= render 'components/booking_experience_type', locals: { current_booking: booking.experience } %>
-          adventure
+          <%= render 'components/booking_experience_type', locals: { current_booking: booking.experience } %> adventure
         </p>
         <p class="black-text"><i class="fas fa-book-reader"></i> <%= booking.experience.description %></p>
         <p class="black-text"><i class="fas fa-coins"></i> £ <%= booking.experience.price %></p>
