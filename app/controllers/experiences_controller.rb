@@ -12,7 +12,7 @@ class ExperiencesController < ApplicationController
   end
 
   def my_experiences
-    @experiences = Experience.where(user:current_user)
+    @experiences = Experience.where(user:current_user).order(id: :desc)
   end
 
   def show
