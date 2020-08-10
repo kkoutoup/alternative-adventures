@@ -1,28 +1,34 @@
 import mapboxgl from 'mapbox-gl';
 
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-
-  const fitMapToMarkers = (map, markers) => {
-    const bounds = new mapboxgl.LngLatBounds();
-    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 200 });
-  };
-
+  
   if (mapElement) {
-    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+    mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/kkoutoup/ckdhnixk000m11io6mvi6sese'
+      style: 'mapbox://styles/kkoutoup/ckdn6k7b91y2y1in4hjh1ghro'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
+        .setLngLat([marker.lng, marker.lat])
         .addTo(map);
     });
-    fitMapToMarkers(map, markers);
+    if (markers.length === 0) {
+      map.setZoom(1);
+    } else if (markers.length === 1) {
+      map.setZoom(14);
+      map.setCenter([markers[0].lng, markers[0].lat]);
+    } else {
+      const bounds = new mapboxgl.LngLatBounds();
+      markers.forEach((marker) => {
+        bounds.extend([marker.lng, marker.lat]);
+      });
+      map.fitBounds(bounds, { duration:200, padding:70 })
+    }
   }
-};
+}
 
 export { initMapbox };

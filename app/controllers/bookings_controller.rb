@@ -16,10 +16,8 @@ class BookingsController < ApplicationController
     @booking.experience = @experience
     @booking.user = current_user
     if @booking.save
-      # set booked to true?
       @booking.update_attributes(booked: true)
       redirect_to experience_path(@experience)
-      # @booking.booked = true
     else
       render :new
     end

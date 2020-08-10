@@ -1,4 +1,4 @@
-<% case @experience.experience_type when "Food/Cooking"%>
+<% case locals[:current_booking].experience_type when "Food/Cooking"%>
   <i class="fas fa-utensils"></i>
   <% when "IT" %> <i class="fas fa-robot"></i>
   <% when "Drinking" %> <i class="fas fa-cocktail"></i>
@@ -9,4 +9,4 @@
   <% when "Music" %> <i class="fas fa-drum"></i>
   <% when "Parents&Kids" %> <i class="fas fa-child"></i>
   <% when "Other" %> <i class="fas fa-question"></i>
-<% end %>
+<% end %> <%= locals[:current_booking].experience_type %>

@@ -12,7 +12,7 @@ class Experience < ApplicationRecord
   has_many :reviews, through: :bookings
   has_many :bookings, dependent: :destroy
   validates :title, :experience_type, :description, presence: true
-  validates :experience_type, inclusion: { in: ["Food/Cooking", "IT Drinking", "Sport", "Gardening", "Arts", "Photography", "Music", "Parents&Kids", "Other"] }
+  validates :experience_type, inclusion: { in: ["Food/Cooking", "IT", "Drinking", "Sport/Outdoors", "Gardening", "Arts/Design", "Photography", "Music", "Parents&Kids", "Other"] }
   validates :title, length: { minimum: 10 }
   validates :description, length: { in: 15..500 }
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 5 }
