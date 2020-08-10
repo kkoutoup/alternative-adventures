@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  
+
   if (mapElement) {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
