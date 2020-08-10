@@ -8,7 +8,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/kkoutoup/ckdn6k7b91y2y1in4hjh1ghro'
+      style: 'mapbox://styles/kkoutoup/ckdoekzho3l2j1irynoh66kwz'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
