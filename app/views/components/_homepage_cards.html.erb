@@ -1,4 +1,5 @@
 <div class="container">
+  <% if @experiences.count > 0 %>
     <h1 class="mt-5 mb-5">Our most popular experiences</h1>
     <div class="row">
       <% @experiences.each do |experience| %>
@@ -25,4 +26,7 @@
         </div> <!-- col -->
       <% end %>
   </div>  <!-- row -->
+  <% else %>
+    <h1 class="text-center mt-5">No experiences have been added yet</h1>
+  <% end %>
 </div> <!-- container -->
