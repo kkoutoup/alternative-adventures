@@ -1,13 +1,10 @@
 <div class="container">
   <h1>My experiences</h1>
   <hr>
-
   <% if @experiences.count > 0 %>
     <% @experiences.each do |experience| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="my-experiences-card">
-      <div class="cardContainer">
-
+    <div class="each-card">
+      <div class="cardContainer-photo">
         <% if experience.photo.attached? %>
           <div class="card-image mb-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 300, width: 400, crop: :fill %>')">
         <% else %>
@@ -15,13 +12,14 @@
         <%  end %>
           </div>
       </div>
-    </div>
-      <h4><%= experience.title %></h4>
-      <p class="black-text"><i class="fas fa-basketball-ball"></i> <%= experience.experience_type %></p>
-      <p class="black-text"><i class="fas fa-book-reader"></i> <%= experience.description %></p>
-      <p class="black-text"><i class="fas fa-coins"></i> £ <%= experience.price %></p>
-      <%= link_to "Edit Experience", edit_experience_path(experience) %>
+      <div class="my-description">
+        <h4><%= experience.title %></h4>
+        <p class="black-text"><i class="fas fa-basketball-ball"></i> <%= experience.experience_type %></p>
+        <p class="black-text"><i class="fas fa-book-reader"></i> <%= experience.description %></p>
+        <p class="black-text"><i class="fas fa-coins"></i> £ <%= experience.price %></p>
+        <%= link_to "Edit Experience", edit_experience_path(experience) %>
       </div>
+    </div>
       <hr>
     <% end %>
   <% else %>
