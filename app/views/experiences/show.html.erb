@@ -31,7 +31,7 @@
       </div>
   </div>
   <div class="row mt-5">
-    <div class="col-12 col-md-10 offset-lg-1">
+    <div class="col-12 col-md-10 offset-md-1 offset-lg-1">
       <% if current_user && @experience.user_id == current_user.id %>
         <%= link_to "Edit Experience", edit_experience_path(@experience), class:"btn btn-warning book" %>
         <hr>
