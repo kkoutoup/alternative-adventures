@@ -1,17 +1,17 @@
-@media (min-width: 1200px) and (max-width: 5000px) {
-  #map {
-    height: 360px;
-  }
-}
+// @media (min-width: 1200px) and (max-width: 5000px) {
+//   #map {
+//     height: 360px;
+//   }
+// }
 
 @media (max-width: 1199px) {
   #map {
-    height: 300px;
+    height: 300px !important;
   }
 }
 
-@media (max-width: 991px) {
-  #map {
-    height: 300px;
-  }
-}
+// @media (max-width: 991px) {
+//   #map {
+//     height: 300px;
+//   }
+// }
