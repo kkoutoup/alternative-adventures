@@ -21,7 +21,8 @@ User.destroy_all if Rails.env.development?
       title: Faker::Company.catch_phrase,
       experience_type: Faker::Educator.subject,
       description: Faker::ChuckNorris.fact,
-      price: Faker::Number.within(range: 5..5000)
+      price: Faker::Number.within(range: 5..5000),
+      address: Faker::Address.full_address
     }])
 end
 
