@@ -19,7 +19,7 @@ User.destroy_all if Rails.env.development?
     Experience.create!([{
       user_id: Faker::Number.within(range: (User.first.id)..(User.last.id)),
       title: Faker::Company.catch_phrase,
-      experience_type: Faker::Educator.subject,
+      experience_type: "Drinking",
       description: Faker::ChuckNorris.fact,
       price: Faker::Number.within(range: 5..5000),
       address: Faker::Address.full_address
