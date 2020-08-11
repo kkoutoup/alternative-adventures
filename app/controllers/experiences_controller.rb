@@ -16,6 +16,7 @@ class ExperiencesController < ApplicationController
   end
 
   def show
+    @experiences = Experience.where.not(id: @experience.id)
     @markers = [{
       lat: @experience.latitude,
       lng: @experience.longitude
