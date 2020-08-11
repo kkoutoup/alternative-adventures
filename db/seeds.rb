@@ -27,15 +27,15 @@ User.destroy_all if Rails.env.development?
 end
 
 # "bookings"
-10.times do
-  Booking.create!([{
-    user_id: Faker::Number.within(range: (User.first.id)..(User.last.id)),
-    experience_id: Faker::Number.within(range: (Experience.first.id)..(Experience.last.id)),
-    booked: false,
-    starts_at: Faker::Date.between(from: Date.today, to: '2021-09-25'),
-    ends_at: Faker::Date.between(from: Date.today, to: '2021-09-25')
-  }])
-end
+# 10.times do
+#   Booking.create!([{
+#     user_id: Faker::Number.within(range: (User.first.id)..(User.last.id)),
+#     experience_id: Faker::Number.within(range: (Experience.first.id)..(Experience.last.id)),
+#     booked: false,
+#     starts_at: Faker::Date.between(from: Date.today, to: '2021-09-25'),
+#     ends_at: "2021-09-26"
+#   }])
+# end
 
 # "reviews"
 10.times do
