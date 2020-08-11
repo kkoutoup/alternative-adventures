@@ -38,12 +38,12 @@ end
 # end
 
 # "reviews"
-10.times do
-  Review.create!([{
-    booking_id: Faker::Number.unique.within(range: (Booking.first.id)..(Booking.last.id)),
-    rating: Faker::Number.within(range: 1..5),
-    content: Faker::Kpop.i_groups
-  }])
-end
+# 10.times do
+#   Review.create!([{
+#     booking_id: Faker::Number.unique.within(range: (Booking.first.id)..(Booking.last.id)),
+#     rating: Faker::Number.within(range: 1..5),
+#     content: Faker::Kpop.i_groups
+#   }])
+# end
 
 puts "Created new users, bookings, experiences and reviews"
