@@ -9,11 +9,13 @@
   &:hover {
     opacity: .8;
   }
+  overflow: hidden;
 }
 
 .adventure-container img {
   height: 20vh;
   width: 100%;
+  object-fit: cover;
 }
 
 .main-content{
