@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm-12 col-lg-6">
       <div id="map"
-        style="width: 100%; margin-top: 8px;"
+        style="width: 100%; margin-top: 8px; height: 360px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
@@ -28,21 +28,20 @@
       <p class="grey-text larger-text"><i class="fas fa-coins"></i> £ <%= @experience.price %></p>
       <p class="grey-text larger-text"><i class="fas fa-book-reader"></i> <%= @experience.description %></p>
     </div>
-    <%= link_to 'Book this experience', new_experience_booking_path(@experience), class:"btn btn-primary book" %>
+    <div class="row mt-5">
+      <div class="col-12 col-md-10 offset-md-1 offset-lg-1">
+        <% if current_user && @experience.user_id == current_user.id %>
+            <%= link_to "Edit Experience", edit_experience_path(@experience), class:"btn btn-warning book" %>
+            <hr>
+            <%= link_to "Delete Experience", experience_path(@experience),  class:"btn btn-danger book", method: :delete, data: {confirm:"Are you sure you want to delete your offered experience?"} %>
+        <% else %>
+            <%= link_to 'Book this experience', new_experience_booking_path(@experience), class:"btn btn-primary book" %>
+        <% end %>
+      </div>
+    </div>
   </div><!--row-->
   <div class="container mt-5" style="border-top: 1px solid #ccc;">
     <h2 class="mt-5">You may also like</h2>
     <%= render 'shared/related_results' %>
-    <div class="row mt-5">
-      <div class="col-12 col-md-10 offset-md-1 offset-lg-1">
-        <% if current_user && @experience.user_id == current_user.id %>
-          <%= link_to "Edit Experience", edit_experience_path(@experience), class:"btn btn-warning book" %>
-          <hr>
-          <%= link_to "Delete Experience", experience_path(@experience),  class:"btn btn-danger book", method: :delete, data: {confirm:"Are you sure you want to delete your offered experience?"} %>
-        <% else %>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
-
