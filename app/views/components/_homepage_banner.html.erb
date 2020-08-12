@@ -1,14 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1492269682833-cd80f8a20b08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1350&q=80);">
   <div class="container">
-    <h1>Alternative Adventures</h1>
-    <h3>Escape without the travel</h3>
+    <h1>Escape without the travel</h1>
     <p>Holiday adventures on your doorstep</p>
-    <%= form_tag experiences_path, method: :get do %>
+
+    <%= form_tag experiences_path , method: :get, class: 'col-sm-6 m-auto' do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Try 'London' or 'Yoga'" %>
-      <%= submit_tag "Search", class: "btn btn-primary mt-2" %>
+      <%= submit_tag "Search", class: "btn btn-primary book-small" %>
     <% end %>
   </div>
 </div>
