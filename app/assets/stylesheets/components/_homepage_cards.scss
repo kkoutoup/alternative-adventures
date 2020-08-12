@@ -12,7 +12,6 @@
 }
 
 .adventure-container img {
-  height: 200px;
   width: 100%;
 }
 
@@ -47,4 +46,16 @@
   text-align: center;
   margin-bottom: 10px;
   color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+  .adventure-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .adventure-container {
+    width: 45%;
+  }
 }

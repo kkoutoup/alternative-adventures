@@ -1,24 +1,23 @@
 <div class="container">
-<div class="row">
-  <% @experiences.each do |experience| %>
-    <div class="adventure-container">
-      <% if experience.photo.attached? %>
-      <%= link_to experience_path(experience) do %>
-        <%= cl_image_tag experience.photo.key, crop: :fill, class:"img-fluid" %>
-      <% end %>
-      <% end %>
-    <div class="header mt-3">
-      <p class="larger-text"><%= experience.title %> </p>
-      <div class="header-information">
-      <p class="grey-text"><%= experience.experience_type %></p>
-      <p class="grey-text">£<%= experience.price %> </p>
+  <div class="row">
+    <% @experiences.each do |experience| %>
+      <div class="adventure-container">
+        <% if experience.photo.attached? %>
+        <%= link_to experience_path(experience) do %>
+          <%= cl_image_tag experience.photo.key, crop: :fill, class:"img-fluid" %>
+        <% end %>
+        <% end %>
+      <div class="header mt-3">
+        <p class="larger-text"><%= experience.title %> </p>
+        <div class="header-information">
+        <p class="grey-text"><%= experience.experience_type %></p>
+        <p class="grey-text">£<%= experience.price %> </p>
+        </div>
       </div>
-    </div>
-    <div class="main-content">
-      <p>This two-week adventure will have you visiting iconic design museums across Europe. </p>
-    </div>
-      <!--<a href="#" class="btn btn-primary">Book now</a>-->
-    </div>
-  <% end %>
-</div>  <!-- row -->
+      <div class="main-content">
+        <p>This two-week adventure will have you visiting iconic design museums across Europe. </p>
+      </div>
+      </div>
+    <% end %>
+  </div> 
 </div>
