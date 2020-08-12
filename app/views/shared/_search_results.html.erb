@@ -1,25 +1,24 @@
+<div class="container">
 <div class="row">
   <% @experiences.each do |experience| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="adventure-container">
+      <% if experience.photo.attached? %>
       <%= link_to experience_path(experience) do %>
-        <div class="cardContainer">
-        <% if experience.photo.attached? %>
-          <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 300, width: 400, crop: :fill %>')">
-        <% else %>
-        <div class="card-image">
-          <%  end %>
-        </div>
-            <div class="card">
-              <div class="card-description">
-                <p><strong><%= experience.experience_type %></strong></p>
-                <p><%= experience.title %></p>
-              </div>
-              <div class="card-price">
-                <h2> <%= experience.price %> £</h2>
-              </div> <!-- card-price -->
-            </div> <!-- card -->
-        </div> <!-- card container -->
+        <%= cl_image_tag experience.photo.key, crop: :fill, class:"img-fluid" %>
       <% end %>
-    </div> <!-- col -->
+      <% end %>
+    <div class="header mt-3">
+      <p class="larger-text"><%= experience.title %> </p>
+      <div class="header-information">
+      <p class="grey-text"><%= experience.experience_type %></p>
+      <p class="grey-text">£<%= experience.price %> </p>
+      </div>
+    </div>
+    <div class="main-content">
+      <p>This two-week adventure will have you visiting iconic design museums across Europe. </p>
+    </div>
+      <!--<a href="#" class="btn btn-primary">Book now</a>-->
+    </div>
   <% end %>
 </div>  <!-- row -->
+</div>
