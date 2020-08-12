@@ -3,7 +3,8 @@
     <h1>Alternative Adventures</h1>
     <h3>Escape without the travel</h3>
     <p>Holiday adventures on your doorstep</p>
-    <%= form_tag experiences_path, method: :get do %>
+
+    <%= form_tag experiences_path , method: :get, class: 'form-horizontal col-sm-4' do %>
       <%= text_field_tag :query,
       params[:query],
       class: "form-control",
