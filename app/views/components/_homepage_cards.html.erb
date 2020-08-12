@@ -1,28 +1,11 @@
 <div class="container">
+  <% if @experiences.count > 0 && params[:query].present? %>
+    <h1 class="mt-5 mb-5">You searched for: <%= params[:query] %></h1>
+    <%= render 'shared/search_results' %>
+  <% elsif @experiences.count == 0 %>
+    <h1 class="text-center mt-5">No results</h1>
+  <% else %>
     <h1 class="mt-5 mb-5">Our most popular experiences</h1>
-    <div class="row">
-      <% @experiences.each do |experience| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to experience_path(experience) do %>
-            <div class="cardContainer">
-            <% if experience.photo.attached? %>
-              <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path experience.photo.key, height: 300, width: 400, crop: :fill %>')">
-            <% else %>
-            <div class="card-image">
-              <%  end %>
-            </div>
-                <div class="card">
-                  <div class="card-description">
-                    <p><strong><%= experience.experience_type %></strong></p>
-                    <p><%= experience.title %></p>
-                  </div>
-                  <div class="card-price">
-                    <h2> <%= experience.price %> £</h2>
-                  </div> <!-- card-price -->
-                </div> <!-- card -->
-            </div> <!-- card container -->
-          <% end %>
-        </div> <!-- col -->
-      <% end %>
-  </div>  <!-- row -->
-</div> <!-- container -->
+    <%= render 'shared/search_results' %>
+  <% end %>
+</div>

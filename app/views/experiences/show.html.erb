@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-12 col-lg-10 offset-lg-1">
       <%= link_to 'All Alternative Adventures', experiences_path, class:"alt-adventures-link" %>
-      <%= link_to "Edit Experience", edit_experience_path(@experience), class:"alt-adventures-link" %>
       <h1 class="mt-3"><%= @experience.title %></h1>
       <% if @experience.photo.present? %>
         <%= image_tag @experience.photo, class:"img-fluid main mt-2" %>
@@ -16,7 +15,7 @@
   <div class="row mt-4">
     <div class="col-12 col-md-5 offset-lg-1">
       <p class="grey-text larger-text"><i class="fas fa-user"></i> Offered by <%= @experience.user.first_name %> <%= @experience.user.last_name %></p>
-      <p class="grey-text larger-text"><%= render 'components/experience_type' %> <%= @experience.experience_type %> adventure</p>
+      <p class="grey-text larger-text"><%= render 'components/experience_type_icon' %> <%= @experience.experience_type %> adventure</p>
       <p class="grey-text larger-text"><i class="fas fa-coins"></i> £ <%= @experience.price %></p>
     </div>
     <div class="col-12 col-md-5">
@@ -32,14 +31,15 @@
       </div>
   </div>
   <div class="row mt-5">
-    <div class="col-12 col-md-10 offset-lg-1">
-      <%= link_to 'Book this experience', new_experience_booking_path(@experience), class:"btn btn-primary book" %>
+    <div class="col-12 col-md-10 offset-md-1 offset-lg-1">
+      <% if current_user && @experience.user_id == current_user.id %>
+        <%= link_to "Edit Experience", edit_experience_path(@experience), class:"btn btn-warning book" %>
+        <hr>
+        <%= link_to "Delete Experience", experience_path(@experience),  class:"btn btn-danger book", method: :delete, data: {confirm:"Are you sure you want to delete your offered experience?"} %>
+      <% else %>
+        <%= link_to 'Book this experience', new_experience_booking_path(@experience), class:"btn btn-primary book" %>
+      <% end %>
     </div>
   </div>
 </div>
-<%# <%= link_to "Edit Experience", edit_experience_path(@experience) %>
-  <%# <%= link_to "See My Bookings", experience_bookings_path(@experience) %>
-  <%# <hr> %>
-  <%# <%= link_to "Edit Experience", edit_experience_path(@experience) %>
-  <%# <hr> %>
-  <%# <%= link_to "Delete Experience", experience_path(@experience), method: :delete, data: {confirm:"Are you sure you want to delete your offered experience?"} %>
+

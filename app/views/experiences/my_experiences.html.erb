@@ -14,7 +14,9 @@
       </div>
       <div class="my-description">
         <h4><%= experience.title %></h4>
-        <p class="black-text"><i class="fas fa-basketball-ball"></i> <%= experience.experience_type %></p>
+        <p class="black-text"> 
+          <%= render 'components/experience_type_icon', locals: { current_experience: experience } %> <%= experience.experience_type %>  adventure 
+        </p>
         <p class="black-text"><i class="fas fa-book-reader"></i> <%= experience.description %></p>
         <p class="black-text"><i class="fas fa-coins"></i> £ <%= experience.price %></p>
         <%= link_to "Edit Experience", edit_experience_path(experience) %>
@@ -26,12 +28,3 @@
     <p>It seems you aren't offering any experiences at the moment.</p>
   <% end %>
 </div>
-<!--
-
-THE CODE FROM MY BOOKING TO ADAPT FOR MY-EXPERIENCES AND REPLACE LINE 17
-  <p class="black-text">
-    <#%= render 'components/booking_experience_type', locals: { current_booking: booking.experience } %>
-    adventure
-  </p>
-
- -->
