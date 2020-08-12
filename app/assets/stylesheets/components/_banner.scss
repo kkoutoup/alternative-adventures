@@ -3,24 +3,27 @@
   background-position: center;
   padding: 150px 0;
   height: 600px;
-  margin-top: -20px;
+  text-align: center;
+  // margin-top: -20px;
 }
 
 .banner h1 {
-  margin: 0;
-  color: white;
+  color: $adventures-green-light;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
+  // text-align: center;
 }
 
 .banner h3 {
-  color: white;
+  color: $adventures-green-light;
+  // text-align: center;
 }
 
 .banner p {
-  font-size: 20px;
-  color: white;
+  font-size: 28px;
+  color: $adventures-green-light;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // text-align: center;
 }
