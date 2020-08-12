@@ -40,8 +40,11 @@
       </div>
     </div>
   </div><!--row-->
-  <div class="container mt-5" style="border-top: 1px solid #ccc;">
+  <% if @experiences.count > 0 %>
+    <hr>
     <h2 class="mt-5">You may also like</h2>
-    <%= render 'shared/related_results' %>
-  </div>
+    <div class="container mt-5">
+      <%= render 'shared/related_results' %>
+    </div>
+  <% end %>
 </div>
