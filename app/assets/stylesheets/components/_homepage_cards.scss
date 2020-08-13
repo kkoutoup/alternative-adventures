@@ -1,55 +1,64 @@
-.card {
-  height: 100px;
-  background-size: cover !important;
-  color: black;
-  position: relative;
-  border-radius: 5px;
+.adventure-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0px 0px 5px #cccccc;
+  margin-right: 10px;
   margin-bottom: 20px;
+  &:hover {
+    opacity: .8;
+  }
+  overflow: hidden;
 }
 
-.card-image {
-  height: 175px;
-  background-size: cover !important;
-  position: relative;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: white;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  image-position: center;
-  background-position: center;
-
+.adventure-container img {
+  height: 20vh;
+  width: 100%;
+  object-fit: cover;
 }
 
-.card-description {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding-bottom: 10px;
-}
-.card-description h2 {
-  font-size: 20px;
-}
-.card-description p {
-  font-size: 13px;
+.main-content{
+  display: flex;
+  padding: 5px 15px;
+  align-items: flex-start;
 }
 
-.card-price {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: black;
+.header {
+  padding-left: 15px;
+  padding-right: 15px;
+  p {
+    font-family: "Poppins", sans-serif;
+  }
 }
 
-.card-price h2{
-  font-size: 20px;
-  margin-top: 10px;
+.header-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.cardContainer {
-  box-shadow: 2px 4px 5px #E8F1F5;
-  border-radius: 4px;
+.faded-text {
+  color: rgb(136, 136, 136);
 }
 
-.cardContainer:hover{
-  opacity: 0.5;
+.book {
+  width: 40%;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+  .adventure-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .adventure-container {
+    width: 45%;
+  }
 }
